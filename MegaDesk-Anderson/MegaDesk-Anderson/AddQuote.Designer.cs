@@ -228,9 +228,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(167, 227);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 13);
+            this.label2.Size = new System.Drawing.Size(116, 13);
             this.label2.TabIndex = 22;
-            this.label2.Text = "3, 5, 7 days (Default 14)";
+            this.label2.Text = "3, 5, 7, or 14(free) days";
             // 
             // label3
             // 
