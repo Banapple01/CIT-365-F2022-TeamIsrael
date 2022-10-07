@@ -26,7 +26,7 @@ namespace MegaDesk_Anderson
 
         public DeskQuote()
         {
-            
+            GetRushOrder(ref RushArray);
         }
 
         public int CalcTotal()
@@ -36,42 +36,40 @@ namespace MegaDesk_Anderson
             return Total;
         }
 
-        /*public static void GetRushOrder()
+        public static void GetRushOrder(ref int[,] RushArray)
         {
-            //try
-            //{
-                public int [] list = new int [9];
+            try
+            {
+                int[] ShipList = new int[9];
+                StreamReader reader = new StreamReader("rushOrderPrices.txt");
+                int count = 0;
+                int num = 0;
 
-                //StreamReader reader = new StreamReader("Properties/rushOrderPrices.txt");
-                
                 while (reader.EndOfStream == false)
                 {
                     string line = reader.ReadLine();
-                    list.add(line);
+                    ShipList[count] = Convert.ToInt32(line);
+                    count++;
                 }
+                reader.Close();
+                Console.WriteLine(ShipList[0] + "Pomagranate");
 
-                print(list);
-
-                public int count = 0;
-                for (int x = 0; x < list.count; x++){
-                    for (int y = 0; y < 3; y++){
-                        RushArray[x, y] = list[count];
-                        count++;
+                for (int x = 0; x < 3; x++)
+                {
+                    for (int y = 0; y < 3; y++)
+                    {
+                        RushArray[x, y] = ShipList[num];
+                        num++;
                     }
                 }
-
-                print(RushArray);
-                reader.Close(); 
-                return ShipCost;
-                Console.WriteLine("Processed");
+                Console.WriteLine(RushArray[2, 2] + "Bananas");
+            }
+            catch
+            {
+                Console.WriteLine("Can't read file rushOrderPrices.txt");
+            }
             
-           // }
-           // catch ()
-           // {
-           //
-           // }
-            
-
-        }*/
+        }      
+        
     }
 }
