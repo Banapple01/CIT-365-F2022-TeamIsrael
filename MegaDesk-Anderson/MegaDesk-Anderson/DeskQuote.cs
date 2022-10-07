@@ -52,7 +52,6 @@ namespace MegaDesk_Anderson
                     count++;
                 }
                 reader.Close();
-                Console.WriteLine(ShipList[0] + "Pomagranate");
 
                 for (int x = 0; x < 3; x++)
                 {
@@ -62,7 +61,6 @@ namespace MegaDesk_Anderson
                         num++;
                     }
                 }
-                Console.WriteLine(RushArray[2, 2] + "Bananas");
             }
             catch
             {
