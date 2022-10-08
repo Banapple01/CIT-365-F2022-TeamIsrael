@@ -12,6 +12,7 @@ namespace MegaDesk_Anderson
 {
     public partial class AddQuote : Form
     {
+
         public AddQuote()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace MegaDesk_Anderson
                 quote.Desk.NumDrawers = Convert.ToInt32(DrawersBox.Text);
                 quote.Desk.Material = MatBox.Text;
 
+                MainMenu.addToQuoteList(quote);
                 DisplayQuote quoteView = new DisplayQuote(quote);
                 quoteView.Tag = this;
                 quoteView.Show(this);

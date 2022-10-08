@@ -336,7 +336,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 561);
+            this.ClientSize = new System.Drawing.Size(306, 561);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.SizeCost);
             this.Controls.Add(this.MatCost);
@@ -363,7 +363,6 @@
             this.Controls.Add(this.Shipping);
             this.Controls.Add(this.ShippingCost);
             this.Controls.Add(this.CustName);
-            //this.Name = "DisplayQuote";
             this.Text = "DisplayQuote";
             this.ResumeLayout(false);
             this.PerformLayout();
