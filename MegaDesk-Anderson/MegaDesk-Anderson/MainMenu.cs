@@ -14,6 +14,7 @@ namespace MegaDesk_Anderson
     {
 
         public static List<DeskQuote> QuoteList = new List<DeskQuote>();
+
         public MainMenu()
         {
             InitializeComponent();
@@ -27,10 +28,10 @@ namespace MegaDesk_Anderson
         public static void addToQuoteList(DeskQuote quote)
         {
             QuoteList.Add(quote);
-            foreach (var i in QuoteList)
-            {
-                Console.WriteLine(i.CustName);
-            }
+            //foreach (var i in QuoteList)
+            //{
+            //    Console.WriteLine(i.CustName);
+            //}
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace MegaDesk_Anderson
 
         private void ViewQuotes_Click(object sender, EventArgs e)
         {
-            ViewAllQuotes viewQuotes = new ViewAllQuotes(QuoteList);
+            ViewAllQuotes viewQuotes = new ViewAllQuotes(QuoteList, "main");
             viewQuotes.Tag = this;
             viewQuotes.Show(this);
             this.Hide();

@@ -40,10 +40,9 @@
             this.BackToHome.FlatAppearance.BorderSize = 2;
             this.BackToHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackToHome.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackToHome.Location = new System.Drawing.Point(35, 318);
-            this.BackToHome.Margin = new System.Windows.Forms.Padding(4);
+            this.BackToHome.Location = new System.Drawing.Point(28, 111);
             this.BackToHome.Name = "BackToHome";
-            this.BackToHome.Size = new System.Drawing.Size(107, 98);
+            this.BackToHome.Size = new System.Drawing.Size(80, 80);
             this.BackToHome.TabIndex = 0;
             this.BackToHome.Text = "Back";
             this.BackToHome.UseVisualStyleBackColor = true;
@@ -55,10 +54,9 @@
             this.SearchButton.FlatAppearance.BorderSize = 2;
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButton.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(194, 318);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchButton.Location = new System.Drawing.Point(147, 111);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(107, 98);
+            this.SearchButton.Size = new System.Drawing.Size(80, 80);
             this.SearchButton.TabIndex = 1;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -73,9 +71,10 @@
             "Veneer",
             "Laminate",
             "Redwood"});
-            this.MatBox.Location = new System.Drawing.Point(169, 69);
+            this.MatBox.Location = new System.Drawing.Point(127, 56);
+            this.MatBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MatBox.Name = "MatBox";
-            this.MatBox.Size = new System.Drawing.Size(132, 24);
+            this.MatBox.Size = new System.Drawing.Size(100, 21);
             this.MatBox.TabIndex = 2;
             this.MatBox.Text = "Select Material";
             // 
@@ -83,23 +82,21 @@
             // 
             this.MatLabel.AutoSize = true;
             this.MatLabel.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MatLabel.Location = new System.Drawing.Point(35, 65);
-            this.MatLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MatLabel.Location = new System.Drawing.Point(26, 53);
             this.MatLabel.Name = "MatLabel";
-            this.MatLabel.Size = new System.Drawing.Size(107, 26);
+            this.MatLabel.Size = new System.Drawing.Size(82, 21);
             this.MatLabel.TabIndex = 24;
             this.MatLabel.Text = "Material:";
             // 
             // SearchQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 444);
+            this.ClientSize = new System.Drawing.Size(254, 208);
             this.Controls.Add(this.MatLabel);
             this.Controls.Add(this.MatBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.BackToHome);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.Load += new System.EventHandler(this.SearchQuotes_Load);
