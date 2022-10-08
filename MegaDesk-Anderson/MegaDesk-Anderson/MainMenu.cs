@@ -12,9 +12,26 @@ namespace MegaDesk_Anderson
 {
     public partial class MainMenu : Form
     {
+
+        public static List<DeskQuote> QuoteList = new List<DeskQuote>();
+
         public MainMenu()
         {
             InitializeComponent();
+        }
+
+        public List<DeskQuote> returnQuoteList()
+        {
+            return QuoteList;
+        }
+
+        public static void addToQuoteList(DeskQuote quote)
+        {
+            QuoteList.Add(quote);
+            //foreach (var i in QuoteList)
+            //{
+            //    Console.WriteLine(i.CustName);
+            //}
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -33,7 +50,7 @@ namespace MegaDesk_Anderson
 
         private void ViewQuotes_Click(object sender, EventArgs e)
         {
-            ViewAllQuotes viewQuotes = new ViewAllQuotes();
+            ViewAllQuotes viewQuotes = new ViewAllQuotes(QuoteList, "main");
             viewQuotes.Tag = this;
             viewQuotes.Show(this);
             this.Hide();
