@@ -19,6 +19,11 @@ namespace MegaDesk_Anderson
             InitializeComponent();
         }
 
+        public List<DeskQuote> returnQuoteList()
+        {
+            return QuoteList;
+        }
+
         public static void addToQuoteList(DeskQuote quote)
         {
             QuoteList.Add(quote);

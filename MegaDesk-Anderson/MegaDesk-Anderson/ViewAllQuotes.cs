@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,41 +17,31 @@ namespace MegaDesk_Anderson
     {
 
         private DeskQuote _quote;
-        private Label label;
+        private int _quoteIndex = 0;
         public ViewAllQuotes(List<DeskQuote> QuoteList)
         {
             InitializeComponent();
-            EnterValues(QuoteList);
+            EnterValues(QuoteList, 0);
         }
 
-        public void EnterValues(List<DeskQuote> QuoteList)
+        public void EnterValues(List<DeskQuote> QuoteList, int _quoteIndex)
         {
-            int j = 0;
-            foreach (var i in QuoteList)
-            {
-                _quote = i;
+            _quote = QuoteList[_quoteIndex];
 
-                label = new Label();
-                label.Name = Convert.ToString(j);
-                label.AutoSize = true;
-                label.Text = _quote.CustName;
-                label.Location = new Point(500, 10);
-                label.BringToFront();
-                this.Controls.Add(label);
-
-                V_Name.Text = _quote.CustName;
-                DateIn.Text = _quote.Date.ToString("dddd MMMM yyyy");
-                MatType.Text = _quote.Desk.Material;
-                SizeIn.Text = Convert.ToString(_quote.Desk.Width * _quote.Desk.Depth + " sq inch");
-                ShipIn.Text = Convert.ToString(_quote.Rush + " day");
-                DrawerNum.Text = Convert.ToString(_quote.Rush);
-                BaseCost.Text = Convert.ToString("$" + Desk.BASEPRICE);
-                MatCost.Text = Convert.ToString("$" + CalcMaterial());
-                SizeCost.Text = Convert.ToString("$" + CalcSizeCost());
-                ShipCost.Text = Convert.ToString("$" + CalcShipping());
-                DrawerCost.Text = Convert.ToString("$" + CalcDrawerCost());
-                TotalCost.Text = Convert.ToString("$" + CalcTotal());
-            }
+            quoteNumber.Text = Convert.ToString(_quoteIndex + 1);
+            V_Name.Text = _quote.CustName;
+            DateIn.Text = _quote.Date.ToString("dddd MMMM yyyy");
+            MatType.Text = _quote.Desk.Material;
+            SizeIn.Text = Convert.ToString(_quote.Desk.Width * _quote.Desk.Depth + " sq inch");
+            ShipIn.Text = Convert.ToString(_quote.Rush + " day");
+            DrawerNum.Text = Convert.ToString(_quote.Rush);
+            BaseCost.Text = Convert.ToString("$" + Desk.BASEPRICE);
+            MatCost.Text = Convert.ToString("$" + CalcMaterial());
+            SizeCost.Text = Convert.ToString("$" + CalcSizeCost());
+            ShipCost.Text = Convert.ToString("$" + CalcShipping());
+            DrawerCost.Text = Convert.ToString("$" + CalcDrawerCost());
+            TotalCost.Text = Convert.ToString("$" + CalcTotal());
+                
         }
 
         public int CalcSizeCost()
@@ -167,6 +158,35 @@ namespace MegaDesk_Anderson
             MainMenu viewMainMenu = (MainMenu)Tag;
             viewMainMenu.Show();
             Close();
+        }
+
+        private void downButton_Click(object sender, EventArgs e)
+        {
+            MainMenu main = new MainMenu();
+            List<DeskQuote> q = main.returnQuoteList();
+
+            if (_quoteIndex < q.Count - 1)
+            {
+                ++_quoteIndex;
+            }
+            EnterValues(q, _quoteIndex);
+        }
+
+        private void upButton_Click(object sender, EventArgs e)
+        {
+            if (_quoteIndex > 0)
+            {
+                --_quoteIndex;
+            }
+
+            MainMenu main = new MainMenu();
+            List<DeskQuote> q = main.returnQuoteList();
+            EnterValues(q, _quoteIndex);
+        }
+
+        private void DateIn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
