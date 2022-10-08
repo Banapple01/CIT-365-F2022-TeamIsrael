@@ -161,7 +161,7 @@ namespace MegaDesk_Anderson
             try
             {
                 int num = Int32.Parse(ShipBox.Text);
-                if (!(num == 3) && !(num == 5) && !(num == 7))
+                if (!(num == 3) && !(num == 5) && !(num == 7) && !(num == 14))
                 {
                     ShipBox.Text = String.Empty;
                     ShipBox.BackColor = Color.LightCoral;
@@ -175,7 +175,7 @@ namespace MegaDesk_Anderson
             }
             catch
             {
-                MessageBox.Show("Enter 3, 5, or 7.");
+                MessageBox.Show("Enter 3, 5, 7, or 14.");
             }
 
         }

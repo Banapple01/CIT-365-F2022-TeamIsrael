@@ -28,7 +28,7 @@ namespace MegaDesk_Anderson
             MatType.Text = _quote.Desk.Material;
             SizeIn.Text = Convert.ToString(_quote.Desk.Width * _quote.Desk.Depth + " sq inch");
             ShipIn.Text = Convert.ToString(_quote.Rush + " day");
-            DrawerNum.Text = Convert.ToString(_quote.Rush);
+            DrawerNum.Text = Convert.ToString(_quote.Desk.NumDrawers);
             BaseCost.Text = Convert.ToString("$" + Desk.BASEPRICE);
             MatCost.Text = Convert.ToString("$" + CalcMaterial());
             SizeCost.Text = Convert.ToString("$" + CalcSizeCost());
@@ -56,45 +56,45 @@ namespace MegaDesk_Anderson
             switch (_quote.Rush)
             {
                 case 3:
-                    if (_quote.Width * _quote.Depth < 1000)
+                    if (_quote.Desk.Width * _quote.Desk.Depth < 1000)
                     {
-                        Shipping += 60;
+                        Shipping += _quote.RushArray[0,0];
                     }
-                    else if ((_quote.Width * _quote.Depth >= 1000) && (_quote.Width * _quote.Depth < 2000))
+                    else if ((_quote.Desk.Width * _quote.Desk.Depth >= 1000) && (_quote.Desk.Width * _quote.Desk.Depth < 2000))
                     {
-                        Shipping += 70;
+                        Shipping += _quote.RushArray[0, 1];
                     }
-                    else if (_quote.Width * _quote.Depth >= 2000)
+                    else if (_quote.Desk.Width * _quote.Desk.Depth >= 2000)
                     {
-                        Shipping += 80;
+                        Shipping += _quote.RushArray[0, 2];
                     }
                     break;
                 case 5:
-                    if (_quote.Width * _quote.Depth < 1000)
+                    if (_quote.Desk.Width * _quote.Desk.Depth < 1000)
                     {
-                        Shipping += 40;
+                        Shipping += _quote.RushArray[1, 0];
                     }
-                    else if ((_quote.Width * _quote.Depth >= 1000) && (_quote.Width * _quote.Depth < 2000))
+                    else if ((_quote.Desk.Width * _quote.Desk.Depth >= 1000) && (_quote.Desk.Width * _quote.Desk.Depth < 2000))
                     {
-                        Shipping += 50;
+                        Shipping += _quote.RushArray[1, 1];
                     }
-                    else if (_quote.Width * _quote.Depth >= 2000)
+                    else if (_quote.Desk.Width * _quote.Desk.Depth >= 2000)
                     {
-                        Shipping += 60;
+                        Shipping += _quote.RushArray[1, 2];
                     }
                     break;
                 case 7:
-                    if (_quote.Width * _quote.Depth < 1000)
+                    if (_quote.Desk.Width * _quote.Desk.Depth < 1000)
                     {
-                        Shipping += 30;
+                        Shipping += _quote.RushArray[2, 0];
                     }
-                    else if ((_quote.Width * _quote.Depth >= 1000) && (_quote.Width * _quote.Depth < 2000))
+                    else if ((_quote.Desk.Width * _quote.Desk.Depth >= 1000) && (_quote.Desk.Width * _quote.Desk.Depth < 2000))
                     {
-                        Shipping += 35;
+                        Shipping += _quote.RushArray[2, 1];
                     }
-                    else if (_quote.Width * _quote.Depth >= 2000)
+                    else if (_quote.Desk.Width * _quote.Desk.Depth >= 2000)
                     {
-                        Shipping += 40;
+                        Shipping += _quote.RushArray[2, 2];
                     }
                     break;
                 case 14:
