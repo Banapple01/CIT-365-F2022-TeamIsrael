@@ -18,10 +18,15 @@ namespace MegaDesk_Anderson
 
         private DeskQuote _quote;
         private int _quoteIndex = 0;
-        public ViewAllQuotes(List<DeskQuote> QuoteList)
+        private string where = "";
+        public ViewAllQuotes(List<DeskQuote> QuoteList, string where)
         {
             InitializeComponent();
-            EnterValues(QuoteList, 0);
+            this.where = where;
+            if (QuoteList.Count > 0)
+            {
+                EnterValues(QuoteList, 0);
+            }
         }
 
         public void EnterValues(List<DeskQuote> QuoteList, int _quoteIndex)
@@ -153,13 +158,6 @@ namespace MegaDesk_Anderson
             return Total;
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            MainMenu viewMainMenu = (MainMenu)Tag;
-            viewMainMenu.Show();
-            Close();
-        }
-
         private void downButton_Click(object sender, EventArgs e)
         {
             MainMenu main = new MainMenu();
@@ -188,5 +186,26 @@ namespace MegaDesk_Anderson
         {
 
         }
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            TheRealBackButtton(this.where);
+        }
+
+        private void TheRealBackButtton(string where)
+        {
+            if (where == "main")
+            {
+                MainMenu viewMainMenu = (MainMenu)Tag;
+                viewMainMenu.Show();
+                Close();
+            }
+            else
+            {
+                SearchQuotes searchQuotes = (SearchQuotes)Tag;
+                searchQuotes.Show();
+                Close();
+            }
+        }
+
     }
 }
