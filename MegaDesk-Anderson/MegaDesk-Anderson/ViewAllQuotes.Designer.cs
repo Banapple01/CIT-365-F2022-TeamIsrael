@@ -55,9 +55,9 @@
             this.ShippingCost = new System.Windows.Forms.Label();
             this.CustName = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.quoteNumber = new System.Windows.Forms.Label();
             this.upButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
-            this.quoteNumber = new System.Windows.Forms.Label();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -374,6 +374,16 @@
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Quote";
             // 
+            // quoteNumber
+            // 
+            this.quoteNumber.AutoSize = true;
+            this.quoteNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quoteNumber.Location = new System.Drawing.Point(214, 0);
+            this.quoteNumber.Name = "quoteNumber";
+            this.quoteNumber.Size = new System.Drawing.Size(16, 17);
+            this.quoteNumber.TabIndex = 54;
+            this.quoteNumber.Text = "0";
+            // 
             // upButton
             // 
             this.upButton.Location = new System.Drawing.Point(12, 468);
@@ -394,16 +404,6 @@
             this.downButton.UseVisualStyleBackColor = true;
             this.downButton.Click += new System.EventHandler(this.downButton_Click);
             // 
-            // quoteNumber
-            // 
-            this.quoteNumber.AutoSize = true;
-            this.quoteNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quoteNumber.Location = new System.Drawing.Point(214, 0);
-            this.quoteNumber.Name = "quoteNumber";
-            this.quoteNumber.Size = new System.Drawing.Size(16, 17);
-            this.quoteNumber.TabIndex = 54;
-            this.quoteNumber.Text = "0";
-            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,6 +415,7 @@
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.backViewQuotes);
             this.Name = "ViewAllQuotes";
+            this.Text = "View Quotes";
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
             this.ResumeLayout(false);

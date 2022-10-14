@@ -363,7 +363,7 @@
             this.Controls.Add(this.Shipping);
             this.Controls.Add(this.ShippingCost);
             this.Controls.Add(this.CustName);
-            this.Text = "DisplayQuote";
+            this.Text = "Display Quote";
             this.ResumeLayout(false);
             this.PerformLayout();
 

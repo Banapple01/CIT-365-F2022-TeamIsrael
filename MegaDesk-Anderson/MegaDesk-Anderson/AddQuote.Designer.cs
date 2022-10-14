@@ -41,13 +41,10 @@
             this.backAddQuote = new System.Windows.Forms.Button();
             this.WidthRange = new System.Windows.Forms.Label();
             this.DepthRange = new System.Windows.Forms.Label();
-            this.DrawerRange = new System.Windows.Forms.Label();
-            this.DrawersBox = new System.Windows.Forms.TextBox();
-            this.MatBox = new System.Windows.Forms.TextBox();
-            this.ShipBox = new System.Windows.Forms.TextBox();
+            this.DrawersBox = new System.Windows.Forms.ComboBox();
+            this.MatBox = new System.Windows.Forms.ComboBox();
+            this.ShipBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NameLabel
@@ -102,7 +99,6 @@
             this.DepthBox.Size = new System.Drawing.Size(100, 20);
             this.DepthBox.TabIndex = 5;
             this.DepthBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Depth_KeyPress);
-            this.DepthBox.Validating += new System.ComponentModel.CancelEventHandler(this.Depth_Validating);
             // 
             // DrawerLabel
             // 
@@ -181,78 +177,72 @@
             this.DepthRange.Text = "12 - 48 inches";
             this.DepthRange.UseMnemonic = false;
             // 
-            // DrawerRange
-            // 
-            this.DrawerRange.AutoSize = true;
-            this.DrawerRange.Location = new System.Drawing.Point(235, 152);
-            this.DrawerRange.Name = "DrawerRange";
-            this.DrawerRange.Size = new System.Drawing.Size(28, 13);
-            this.DrawerRange.TabIndex = 16;
-            this.DrawerRange.Text = "0 - 7";
-            // 
             // DrawersBox
             // 
-            this.DrawersBox.Location = new System.Drawing.Point(299, 150);
+            this.DrawersBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DrawersBox.FormattingEnabled = true;
+            this.DrawersBox.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+            this.DrawersBox.Location = new System.Drawing.Point(299, 149);
             this.DrawersBox.Name = "DrawersBox";
-            this.DrawersBox.Size = new System.Drawing.Size(100, 20);
-            this.DrawersBox.TabIndex = 18;
-            this.DrawersBox.Validating += new System.ComponentModel.CancelEventHandler(this.Drawers_Validating);
+            this.DrawersBox.Size = new System.Drawing.Size(100, 21);
+            this.DrawersBox.TabIndex = 24;
             // 
             // MatBox
             // 
-            this.MatBox.Location = new System.Drawing.Point(299, 186);
+            this.MatBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MatBox.FormattingEnabled = true;
+            this.MatBox.Items.AddRange(new object[] {
+            "Pine",
+            "Laminate",
+            "Redwood",
+            "Oak",
+            "Veneer"});
+            this.MatBox.Location = new System.Drawing.Point(299, 187);
             this.MatBox.Name = "MatBox";
-            this.MatBox.Size = new System.Drawing.Size(100, 20);
-            this.MatBox.TabIndex = 19;
-            this.MatBox.Validating += new System.ComponentModel.CancelEventHandler(this.Material_Validating);
+            this.MatBox.Size = new System.Drawing.Size(100, 21);
+            this.MatBox.TabIndex = 25;
             // 
             // ShipBox
             // 
-            this.ShipBox.Location = new System.Drawing.Point(299, 224);
+            this.ShipBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ShipBox.FormattingEnabled = true;
+            this.ShipBox.Items.AddRange(new object[] {
+            "3",
+            "5",
+            "7",
+            "14"});
+            this.ShipBox.Location = new System.Drawing.Point(299, 225);
             this.ShipBox.Name = "ShipBox";
-            this.ShipBox.Size = new System.Drawing.Size(100, 20);
-            this.ShipBox.TabIndex = 20;
-            this.ShipBox.Validating += new System.ComponentModel.CancelEventHandler(this.ShipBox_Validating);
+            this.ShipBox.Size = new System.Drawing.Size(100, 21);
+            this.ShipBox.TabIndex = 26;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 183);
+            this.label1.Location = new System.Drawing.Point(166, 227);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Laminate, Redwood,";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(167, 227);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "3, 5, 7, or 14(free) days";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Oak, Pine, Veneer";
+            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "(14 day free shipping)";
+            this.label1.UseMnemonic = false;
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 411);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ShipBox);
             this.Controls.Add(this.MatBox);
             this.Controls.Add(this.DrawersBox);
-            this.Controls.Add(this.DrawerRange);
             this.Controls.Add(this.DepthRange);
             this.Controls.Add(this.WidthRange);
             this.Controls.Add(this.backAddQuote);
@@ -267,7 +257,7 @@
             this.Controls.Add(this.NameBox);
             this.Controls.Add(this.NameLabel);
             this.Name = "AddQuote";
-            this.Text = "AddQuote";
+            this.Text = "Add Quote";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,12 +278,9 @@
         private System.Windows.Forms.Button backAddQuote;
         private System.Windows.Forms.Label WidthRange;
         private System.Windows.Forms.Label DepthRange;
-        private System.Windows.Forms.Label DrawerRange;
-        private System.Windows.Forms.TextBox DrawersBox;
-        private System.Windows.Forms.TextBox MatBox;
-        private System.Windows.Forms.TextBox ShipBox;
+        private System.Windows.Forms.ComboBox DrawersBox;
+        private System.Windows.Forms.ComboBox MatBox;
+        private System.Windows.Forms.ComboBox ShipBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }

@@ -33,20 +33,21 @@ namespace MegaDesk_Anderson
                 //Create an instance of desk quote
                 DeskQuote quote = new DeskQuote();
                 
-                if (ShipBox.Text == "")
+                /*if (ShipBox.Text == "")
                 {
                     quote.Rush = 14;
                 }
                 else
                 {
                     quote.Rush = Convert.ToInt32(ShipBox.Text);
-                }
+                }*/
                 
                 quote.CustName = NameBox.Text;
                 quote.Desk.Width = Convert.ToInt32(WidthBox.Text);
                 quote.Desk.Depth = Convert.ToInt32(DepthBox.Text);
                 quote.Desk.NumDrawers = Convert.ToInt32(DrawersBox.Text);
                 quote.Desk.Material = MatBox.Text;
+                quote.Rush = Convert.ToInt32(ShipBox.Text);
 
                 MainMenu.addToQuoteList(quote);
                 DisplayQuote quoteView = new DisplayQuote(quote);
@@ -109,12 +110,12 @@ namespace MegaDesk_Anderson
             {
                 DepthBox.BackColor = Color.LightCoral;
                 DepthBox.Focus();
-                MessageBox.Show("Enter an integer between 12 and 48.");
-            }
+                //MessageBox.Show("Enter an integer between 12 and 48.");
+            }            
 
         }
 
-        private void Material_Validating(object sender, CancelEventArgs e)
+        /*private void Material_Validating(object sender, CancelEventArgs e)
         {
             string Mat = MatBox.Text.ToLower();
             if (!Mat.Equals("oak") && !Mat.Equals("laminate") && !Mat.Equals("redwood")
@@ -178,12 +179,7 @@ namespace MegaDesk_Anderson
                 MessageBox.Show("Enter 3, 5, 7, or 14.");
             }
 
-        }
-
-        private void Depth_Validating(object sender, CancelEventArgs e)
-        {
-
-        }
+        }*/
 
     }
 }

@@ -72,7 +72,7 @@
             "Laminate",
             "Redwood"});
             this.MatBox.Location = new System.Drawing.Point(127, 56);
-            this.MatBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MatBox.Margin = new System.Windows.Forms.Padding(2);
             this.MatBox.Name = "MatBox";
             this.MatBox.Size = new System.Drawing.Size(100, 21);
             this.MatBox.TabIndex = 2;
@@ -98,7 +98,7 @@
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.BackToHome);
             this.Name = "SearchQuotes";
-            this.Text = "SearchQuotes";
+            this.Text = "Search Quotes";
             this.Load += new System.EventHandler(this.SearchQuotes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
