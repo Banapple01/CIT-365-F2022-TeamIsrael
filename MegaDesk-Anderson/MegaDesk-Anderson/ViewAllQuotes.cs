@@ -19,13 +19,15 @@ namespace MegaDesk_Anderson
         private DeskQuote _quote;
         private int _quoteIndex = 0;
         private string where = "";
+        private List<DeskQuote> _quotes;
         public ViewAllQuotes(List<DeskQuote> QuoteList, string where)
         {
             InitializeComponent();
             this.where = where;
+            _quotes = QuoteList;
             if (QuoteList.Count > 0)
             {
-                EnterValues(QuoteList, 0);
+                EnterValues(_quotes, 0);
             }
         }
 
@@ -161,14 +163,11 @@ namespace MegaDesk_Anderson
 
         private void downButton_Click(object sender, EventArgs e)
         {
-            MainMenu main = new MainMenu();
-            List<DeskQuote> q = main.returnQuoteList();
-
-            if (_quoteIndex < q.Count - 1)
+            if (_quoteIndex < _quotes.Count - 1)
             {
                 ++_quoteIndex;
             }
-            EnterValues(q, _quoteIndex);
+            EnterValues(_quotes, _quoteIndex);
         }
 
         private void upButton_Click(object sender, EventArgs e)
@@ -177,10 +176,8 @@ namespace MegaDesk_Anderson
             {
                 --_quoteIndex;
             }
-
-            MainMenu main = new MainMenu();
-            List<DeskQuote> q = main.returnQuoteList();
-            EnterValues(q, _quoteIndex);
+            
+            EnterValues(_quotes, _quoteIndex);
         }
 
         private void DateIn_Click(object sender, EventArgs e)
