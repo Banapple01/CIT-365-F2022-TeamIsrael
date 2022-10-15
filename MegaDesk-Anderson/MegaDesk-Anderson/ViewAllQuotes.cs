@@ -194,12 +194,14 @@ namespace MegaDesk_Anderson
             if (where == "main")
             {
                 MainMenu viewMainMenu = (MainMenu)Tag;
+                MainMenu.clearQuoteList();
                 viewMainMenu.Show();
                 Close();
             }
             else
             {
                 SearchQuotes searchQuotes = (SearchQuotes)Tag;
+                MainMenu.clearQuoteList();
                 searchQuotes.Show();
                 Close();
             }

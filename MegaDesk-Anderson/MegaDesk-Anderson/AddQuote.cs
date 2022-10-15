@@ -50,6 +50,7 @@ namespace MegaDesk_Anderson
                 quote.Rush = Convert.ToInt32(ShipBox.Text);
 
                 MainMenu.addToQuoteList(quote);
+                MainMenu.writeToJson();
                 DisplayQuote quoteView = new DisplayQuote(quote);
                 quoteView.Tag = this;
                 quoteView.Show(this);

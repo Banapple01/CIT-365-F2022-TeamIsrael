@@ -21,19 +21,19 @@ namespace MegaDesk_Anderson
         public MainMenu()
         {
             InitializeComponent();
-            writeToJson();
+        }
+
+        public static void clearQuoteList()
+        {
+            QuoteList.Clear();
         }
 
         public static void writeToJson()
         {
 
             var filePath = "jsconfig1.json";
-            // Read existing json data
-            var jsonData = File.ReadAllText(filePath);
-            Console.WriteLine(jsonData);
-            // De-serialize to object or create new list
-            var quote_List = JsonConvert.DeserializeObject<List<DeskQuote>>(jsonData)
-                               ?? new List<DeskQuote>();
+            readFromJson();
+            var quote_List = new List<DeskQuote>();
 
             // Add any new employees
             foreach (var q in QuoteList)
@@ -44,7 +44,8 @@ namespace MegaDesk_Anderson
             QuoteList = new List<DeskQuote>();
 
                 // Update json data string
-            jsonData = JsonConvert.SerializeObject(quote_List);
+            var jsonData = JsonConvert.SerializeObject(quote_List);
+            Console.WriteLine("write", jsonData);
             File.WriteAllText(filePath, jsonData);
         }
         public static void readFromJson()
@@ -53,7 +54,7 @@ namespace MegaDesk_Anderson
             var filePath = "jsconfig1.json";
             // Read existing json data
             var jsonData = File.ReadAllText(filePath);
-            Console.WriteLine(jsonData);
+            Console.WriteLine("read", jsonData);
             // De-serialize to object or create new list
             var quote_List = JsonConvert.DeserializeObject<List<DeskQuote>>(jsonData)
                              ?? new List<DeskQuote>();
@@ -75,7 +76,6 @@ namespace MegaDesk_Anderson
         public static void addToQuoteList(DeskQuote quote)
         {
             QuoteList.Add(quote);
-            writeToJson();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
