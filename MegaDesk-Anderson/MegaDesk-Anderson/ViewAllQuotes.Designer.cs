@@ -67,9 +67,9 @@
             this.backViewQuotes.FlatAppearance.BorderSize = 2;
             this.backViewQuotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backViewQuotes.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backViewQuotes.Location = new System.Drawing.Point(12, 517);
+            this.backViewQuotes.Location = new System.Drawing.Point(11, 475);
             this.backViewQuotes.Name = "backViewQuotes";
-            this.backViewQuotes.Size = new System.Drawing.Size(80, 37);
+            this.backViewQuotes.Size = new System.Drawing.Size(80, 80);
             this.backViewQuotes.TabIndex = 0;
             this.backViewQuotes.Text = "Back";
             this.backViewQuotes.UseVisualStyleBackColor = true;
@@ -386,7 +386,11 @@
             // 
             // upButton
             // 
-            this.upButton.Location = new System.Drawing.Point(12, 468);
+            this.upButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.upButton.FlatAppearance.BorderSize = 2;
+            this.upButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upButton.Font = new System.Drawing.Font("Elephant", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upButton.Location = new System.Drawing.Point(11, 438);
             this.upButton.Name = "upButton";
             this.upButton.Size = new System.Drawing.Size(72, 27);
             this.upButton.TabIndex = 52;
@@ -396,7 +400,11 @@
             // 
             // downButton
             // 
-            this.downButton.Location = new System.Drawing.Point(165, 468);
+            this.downButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.downButton.FlatAppearance.BorderSize = 2;
+            this.downButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.downButton.Font = new System.Drawing.Font("Elephant", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.downButton.Location = new System.Drawing.Point(190, 438);
             this.downButton.Name = "downButton";
             this.downButton.Size = new System.Drawing.Size(72, 27);
             this.downButton.TabIndex = 53;

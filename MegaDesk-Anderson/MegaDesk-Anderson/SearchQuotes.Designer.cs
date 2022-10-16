@@ -71,7 +71,7 @@
             "Veneer",
             "Laminate",
             "Redwood"});
-            this.MatBox.Location = new System.Drawing.Point(127, 56);
+            this.MatBox.Location = new System.Drawing.Point(127, 52);
             this.MatBox.Margin = new System.Windows.Forms.Padding(2);
             this.MatBox.Name = "MatBox";
             this.MatBox.Size = new System.Drawing.Size(100, 21);
