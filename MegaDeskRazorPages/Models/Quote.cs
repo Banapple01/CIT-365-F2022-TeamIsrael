@@ -1,6 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml.Schema;
+using MegaDeskRazorPages.Data;
+using MegaDeskRazorPages.Models;
 
 namespace MegaDeskRazorPages.Models
 {
@@ -26,7 +29,6 @@ namespace MegaDeskRazorPages.Models
         [DataType(DataType.Date)]
         public DateTime QuoteDate { get; set; }
 
-        public int[,] RushArray = new int[3, 3];
 
         //Declare constants
         public const int MINWIDTH = 24;
@@ -38,14 +40,134 @@ namespace MegaDeskRazorPages.Models
         public const int BASEPRICE = 200;
         public const int DRAWERPRICE = 50;
 
-    }
+        enum DeskMaterial
+        {
+            laminate,
+            oak,
+            rosewood,
+            veneer,
+            pine
+        }
+        /*
+        public Quote()
+        {
+            Total = CalcTotal();
+        }
 
-    enum DeskMaterial
-    {
-        laminate,
-        oak,
-        rosewood,
-        veneer,
-        pine
+        public int CalcTotal()
+        {
+            int total = 200;
+
+            total += CalcMatPrice();
+            total += CalcShipPrice();
+            total += CalcDrawerPrice();
+            total += CalcSizePrice();
+                
+            return total;
+        }
+    
+        public int CalcShipPrice()
+        {
+            int ShipPrice = 0;
+
+            switch (Rush)
+            {
+                case 3:
+                    if (Width * Depth < 1000)
+                    {
+                        ShipPrice += 60;
+                    }
+                    else if ((Width * Depth >= 1000) && (Width * Depth < 2000))
+                    {
+                        ShipPrice += 70;
+                    }
+                    else if (Width * Depth >= 2000)
+                    {
+                        ShipPrice += 80;
+                    }
+                    break;
+                case 5:
+                    if (Width * Depth < 1000)
+                    {
+                        ShipPrice += 40;
+                    }
+                    else if ((Width * Depth >= 1000) && (Width * Depth < 2000))
+                    {
+                        ShipPrice += 50;
+                    }
+                    else if (Width * Depth >= 2000)
+                    {
+                        ShipPrice += 60;
+                    }
+                    break;
+                case 7:
+                    if (Width * Depth < 1000)
+                    {
+                        ShipPrice += 30;
+                    }
+                    else if ((Width * Depth >= 1000) && (Width * Depth < 2000))
+                    {
+                        ShipPrice += 35;
+                    }
+                    else if (Width * Depth >= 2000)
+                    {
+                        ShipPrice += 40;
+                    }
+                    break;
+                case 14:
+                    ShipPrice += 0;
+                    break;
+            }
+
+            return ShipPrice;
+        }
+
+        public int CalcMatPrice()
+        {
+            int MatPrice = 0;
+
+            switch (Material.ToLower())
+            {
+                case "oak":
+                    MatPrice += 200;
+                    break;
+                case "laminate":
+                    MatPrice += 100;
+                    break;
+                case "pine":
+                    MatPrice += 50;
+                    break;
+                case "redwood":
+                    MatPrice += 300;
+                    break;
+                case "veneer":
+                    MatPrice += 125;
+                    break;
+            }
+
+            return MatPrice;
+        }
+
+        public int CalcDrawerPrice()
+        {
+            int DrawerPrice = Drawers * DRAWERPRICE;
+
+            return DrawerPrice;
+        }
+
+        public int CalcSizePrice()
+        {
+            int SizePrice = 0;
+
+            if (Width * Depth > 1000)
+            {
+                SizePrice += (Width * Depth) - 1000;
+            }
+
+            return SizePrice;
+        }*/
+
     }
+        
+    
 }
