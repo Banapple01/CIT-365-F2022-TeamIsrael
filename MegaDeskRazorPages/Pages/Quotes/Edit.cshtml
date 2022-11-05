@@ -5,64 +5,133 @@
     ViewData["Title"] = "Edit";
 }
 
+<style>
+    #wrapper {
+        max-width: 500px;
+        min-width: 450px;
+        margin: 30px auto;
+    }
+
+    .formWrap {
+        border: solid black 2px;
+        border-radius: 8px;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .formRow {
+        display: flex;
+        padding: 5px 0;
+    }
+
+    .column {
+        padding: 0 5px;
+    }
+
+    .third {
+        width: 33%;
+    }
+
+    .half {
+        width: 50%;
+    }
+
+    .twoThird {
+        width: 75%;
+    }
+
+    .buttonWrap {
+        margin: 30px auto 0 auto;
+        width: 500px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .addButton {
+        background: #000000;
+        border-radius: 8px;
+        color: #ffffff;
+        height: 40px;
+        width: 120px;
+        text-align: center;
+    }
+
+        .addButton:hover {
+            background: #333333;
+        }
+
+    .buttonWrap a {
+        text-decoration: none;
+        line-height: 40px;
+    }
+</style>
+
 <h1>Edit</h1>
-
-<h4>Quote</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div id="wrapper">
+    <h5>Edit quote using the form below</h5>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="formWrap">
+            <div class="formRow">
+                <div class="form-group column twoThird">
+                    <label asp-for="Quote.CustName" class="control-label"></label>
+                    <input asp-for="Quote.CustName" class="form-control" />
+                    <span asp-validation-for="Quote.CustName" class="text-danger"></span>
+                </div>
+                <div class="form-group column third">
+                    <label asp-for="Quote.QuoteDate" class="control-label"></label>
+                    <input asp-for="Quote.QuoteDate" class="form-control" />
+                    <span asp-validation-for="Quote.QuoteDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="formRow">
+                <div class="form-group column third">
+                    <label asp-for="Quote.Width" class="control-label"></label>
+                    <input asp-for="Quote.Width" class="form-control" />
+                    <span asp-validation-for="Quote.Width" class="text-danger"></span>
+                </div>
+                <div class="form-group column third">
+                    <label asp-for="Quote.Depth" class="control-label"></label>
+                    <input asp-for="Quote.Depth" class="form-control" />
+                    <span asp-validation-for="Quote.Depth" class="text-danger"></span>
+                </div>
+                <div class="form-group column third">
+                    <label asp-for="Quote.Drawers" class="control-label"></label>
+                    <input asp-for="Quote.Drawers" class="form-control" />
+                    <span asp-validation-for="Quote.Drawers" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="formRow">
+                <div class="form-group column twoThird">
+                    <label asp-for="Quote.Material" class="control-label"></label>
+                    <input asp-for="Quote.Material" class="form-control" />
+                    <span asp-validation-for="Quote.Material" class="text-danger"></span>
+                </div>
+            </div>
             <input type="hidden" asp-for="Quote.ID" />
-            <div class="form-group">
-                <label asp-for="Quote.Rush" class="control-label"></label>
-                <input asp-for="Quote.Rush" class="form-control" />
-                <span asp-validation-for="Quote.Rush" class="text-danger"></span>
+            <div class="formRow">
+                <div class="form-group column half">
+                    <label asp-for="Quote.Rush" class="control-label"></label>
+                    <input asp-for="Quote.Rush" class="form-control" />
+                    <span asp-validation-for="Quote.Rush" class="text-danger"></span>
+                </div>
+                <div class="form-group column half">
+                    <label asp-for="Quote.Total" class="control-label"></label>
+                    <input asp-for="Quote.Total" class="form-control" />
+                    <span asp-validation-for="Quote.Total" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Quote.Total" class="control-label"></label>
-                <input asp-for="Quote.Total" class="form-control" />
-                <span asp-validation-for="Quote.Total" class="text-danger"></span>
+        </div>
+        <div class="buttonWrap">
+            <div class="form-group" id="submit">
+                <input type="submit" value="Save" class="addButton" />
             </div>
-            <div class="form-group">
-                <label asp-for="Quote.Width" class="control-label"></label>
-                <input asp-for="Quote.Width" class="form-control" />
-                <span asp-validation-for="Quote.Width" class="text-danger"></span>
+            <div id="back">
+                <a asp-page="./Index"><div class="addButton">Back to List</div></a>
             </div>
-            <div class="form-group">
-                <label asp-for="Quote.Depth" class="control-label"></label>
-                <input asp-for="Quote.Depth" class="form-control" />
-                <span asp-validation-for="Quote.Depth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.Drawers" class="control-label"></label>
-                <input asp-for="Quote.Drawers" class="form-control" />
-                <span asp-validation-for="Quote.Drawers" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.CustName" class="control-label"></label>
-                <input asp-for="Quote.CustName" class="form-control" />
-                <span asp-validation-for="Quote.CustName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.Material" class="control-label"></label>
-                <input asp-for="Quote.Material" class="form-control" />
-                <span asp-validation-for="Quote.Material" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quote.QuoteDate" class="control-label"></label>
-                <input asp-for="Quote.QuoteDate" class="form-control" />
-                <span asp-validation-for="Quote.QuoteDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
