@@ -11,7 +11,6 @@ namespace MegaDeskRazorPages.Models
     {
         public int ID { get; set; }
         public int Rush { get; set; }
-        public int Total { get; set; }
         public int Width { get; set; }
         public int Depth { get; set; }
         public int Drawers { get; set; }
@@ -29,6 +28,8 @@ namespace MegaDeskRazorPages.Models
         [DataType(DataType.Date)]
         public DateTime QuoteDate { get; set; }
 
+        public int Total { get; set; }
+      
 
         //Declare constants
         public const int MINWIDTH = 24;
@@ -48,13 +49,13 @@ namespace MegaDeskRazorPages.Models
             veneer,
             pine
         }
-        /*
+        
         public Quote()
         {
-            Total = CalcTotal();
+
         }
 
-        public int CalcTotal()
+        /*public int CalcTotal()
         {
             int total = 200;
 
@@ -137,7 +138,7 @@ namespace MegaDeskRazorPages.Models
                 case "pine":
                     MatPrice += 50;
                     break;
-                case "redwood":
+                case "rosewood":
                     MatPrice += 300;
                     break;
                 case "veneer":
