@@ -5,12 +5,16 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Quote for @Html.DisplayFor(model => model.Quote.CustName)</h1>
 
 <div>
-    <h4>Quote for @Html.DisplayFor(model => model.Quote.CustName)</h4>
     <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+            <h4>Details</h4>
+        </dt>
+        <dd class="col-sm-10">
+        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quote.CustName)
         </dt>
@@ -27,7 +31,7 @@
             @Html.DisplayNameFor(model => model.Quote.Rush)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.Rush)
+            @Html.DisplayFor(model => model.Quote.Rush) days
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quote.Width)
@@ -54,16 +58,49 @@
             @Html.DisplayFor(model => model.Quote.Material)
         </dd>
         <dt class="col-sm-2">
-            Base Price
+            <h4>Cost</h4>
+        </dt>
+        <dd class="col-sm-10">
+        </dd>
+        <dt class="col-sm-2">
+            Base Cost
         </dt>
         <dd class="col-sm-10">
             $200
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quote.Total)
+            Additional Area Cost
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.Total)
+            $@Html.DisplayFor(model => model.Quote.Total)
+        </dd>
+        <dt class="col-sm-2">
+        </dt>
+        <dd class="col-sm-10">
+        </dd>
+        <dt class="col-sm-2">
+            Drawer Cost
+        </dt>
+        <dd class="col-sm-10">
+            $@Html.DisplayFor(model => model.Quote.Total)
+        </dd>
+        <dt class="col-sm-2">
+            Surface Material Cost
+        </dt>
+        <dd class="col-sm-10">
+            $@Html.DisplayFor(model => model.Quote.Total)
+        </dd>
+        <dt class="col-sm-2">
+            Rush Order Cost
+        </dt>
+        <dd class="col-sm-10">
+            $@Html.DisplayFor(model => model.Quote.Total)
+        </dd>
+        <dt class="col-sm-2">
+            <h3>@Html.DisplayNameFor(model => model.Quote.Total)</h3>
+        </dt>
+        <dd class="col-sm-10">
+            <h3>$@Html.DisplayFor(model => model.Quote.Total)</h3>
         </dd>
     </dl>
 </div>
