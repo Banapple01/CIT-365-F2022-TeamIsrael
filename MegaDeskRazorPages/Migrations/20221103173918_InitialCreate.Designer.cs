@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MegaDeskRazorPages.Migrations
 {
     [DbContext(typeof(MegaDeskRazorPagesContext))]
-    [Migration("20221102023832_InitialCreate")]
+    [Migration("20221103173918_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,13 +40,13 @@ namespace MegaDeskRazorPages.Migrations
                     b.Property<int>("Depth")
                         .HasColumnType("int");
 
+                    b.Property<int>("Drawers")
+                        .HasColumnType("int");
+
                     b.Property<string>("Material")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
-
-                    b.Property<int>("Drawers")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("QuoteDate")
                         .HasColumnType("datetime2");

@@ -30,7 +30,8 @@ namespace MegaDeskRazorPages.Models
                         Rush = 3,
                         Width = 24,
                         Depth = 24,
-                        Drawers = 2
+                        Drawers = 2,
+                        Total = 0
                     },
 
                     new Quote
@@ -41,7 +42,8 @@ namespace MegaDeskRazorPages.Models
                         Rush = 3,
                         Width = 46,
                         Depth = 28,
-                        Drawers = 7
+                        Drawers = 7,
+                        Total = 0
                     },
 
                     new Quote
@@ -52,7 +54,8 @@ namespace MegaDeskRazorPages.Models
                         Rush = 7,
                         Width = 24,
                         Depth = 48,
-                        Drawers = 4
+                        Drawers = 4,
+                        Total = 0
                     },
 
                     new Quote
