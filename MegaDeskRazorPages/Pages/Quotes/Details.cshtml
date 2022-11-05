@@ -8,20 +8,26 @@
 <h1>Details</h1>
 
 <div>
-    <h4>Quote</h4>
+    <h4>Quote for @Html.DisplayFor(model => model.Quote.CustName)</h4>
     <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Quote.CustName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quote.CustName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Quote.QuoteDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Quote.QuoteDate)
+        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quote.Rush)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Quote.Rush)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quote.Total)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.Total)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quote.Width)
@@ -42,22 +48,16 @@
             @Html.DisplayFor(model => model.Quote.Drawers)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quote.CustName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.CustName)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Quote.Material)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Quote.Material)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quote.QuoteDate)
+            @Html.DisplayNameFor(model => model.Quote.Total)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.QuoteDate)
+            @Html.DisplayFor(model => model.Quote.Total)
         </dd>
     </dl>
 </div>
