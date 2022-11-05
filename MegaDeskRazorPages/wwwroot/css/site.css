@@ -16,3 +16,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.home {
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+}
