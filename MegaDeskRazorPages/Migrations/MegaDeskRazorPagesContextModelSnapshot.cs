@@ -38,7 +38,13 @@ namespace MegaDeskRazorPages.Migrations
                     b.Property<int>("Depth")
                         .HasColumnType("int");
 
+                    b.Property<int>("DrawerPrice")
+                        .HasColumnType("int");
+
                     b.Property<int>("Drawers")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MatPrice")
                         .HasColumnType("int");
 
                     b.Property<string>("Material")
@@ -50,6 +56,12 @@ namespace MegaDeskRazorPages.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Rush")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ShipPrice")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SizePrice")
                         .HasColumnType("int");
 
                     b.Property<int>("Total")

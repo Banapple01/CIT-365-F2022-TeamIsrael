@@ -15,14 +15,23 @@ namespace MegaDeskRazorPages.Models
         public int Depth { get; set; }
         public int Drawers { get; set; }
 
+        [Display(Name = "Drawer Price")]
+        public int DrawerPrice { get; set; }
+        [Display(Name = "Oversize Price")]
+        public int SizePrice { get; set; }
+        [Display(Name = "Shipping Price")]
+        public int ShipPrice { get; set; }
+        [Display(Name = "Material Price")]
+        public int MatPrice { get; set; }
+
         [Display(Name = "Customer Name")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string CustName { get; set; }
 
-        [Display(Name = "Surface Material")]
-        [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Display(Name = "Surface Material")]
+        //[StringLength(60, MinimumLength = 3)]
+        //[Required]
         public string Material { get; set; }
 
         [Display(Name = "Quote Date")]
