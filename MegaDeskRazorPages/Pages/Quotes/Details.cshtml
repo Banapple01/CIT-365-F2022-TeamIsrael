@@ -66,67 +66,37 @@
             Base Cost
         </dt>
         <dd class="col-sm-10">
-            200
+            $200
         </dd>
         <dt class="col-sm-2">
             Additional Area Cost
         </dt>
         <dd class="col-sm-10">
-            $@Html.DisplayFor(model => model.Quote.Total)
-        </dd>
-        <dt class="col-sm-2">
-        </dt>
-        <dd class="col-sm-10">
+            $@Html.DisplayFor(model => model.Quote.SizePrice)
         </dd>
         <dt class="col-sm-2">
             Drawer Cost
         </dt>
         <dd class="col-sm-10">
-            $@Html.DisplayFor(model => model.Quote.Total)
+            $@Html.DisplayFor(model => model.Quote.DrawerPrice)
         </dd>
         <dt class="col-sm-2">
             Surface Material Cost
         </dt>
         <dd class="col-sm-10">
-            $@Html.DisplayFor(model => model.Quote.Total)
+            $@Html.DisplayFor(model => model.Quote.MatPrice)
         </dd>
         <dt class="col-sm-2">
             Rush Order Cost
         </dt>
         <dd class="col-sm-10">
-            $@Html.DisplayFor(model => model.Quote.Total)
+            $@Html.DisplayFor(model => model.Quote.ShipPrice)
         </dd>
         <dt class="col-sm-2">
             <h3>@Html.DisplayNameFor(model => model.Quote.Total)</h3>
         </dt>
         <dd class="col-sm-10">
             <h3>$@Html.DisplayFor(model => model.Quote.Total)</h3>
-        </dd>
-
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quote.MatPrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.MatPrice)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quote.ShipPrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.ShipPrice)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quote.SizePrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.SizePrice)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quote.DrawerPrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Quote.DrawerPrice)
         </dd>
     </dl>
 </div>
