@@ -27,18 +27,18 @@ namespace MegaDeskRazorPages.Pages.Quotes
         [BindProperty(SupportsGet = true)]
         public string ? CustomerName { get; set; }
 
-        public SelectList ? DateAdded { get; set; }
+/*        public SelectList ? DateAdded { get; set; }
         [BindProperty(SupportsGet = true)]
-        public DateTime ? QuDate { get; set; }
+        public DateTime ? QuDate { get; set; }*/
 
         public async Task OnGetAsync()
         {
-            IQueryable<DateTime> dateQuery = from e in _context.Quote
+/*            IQueryable<DateTime> dateQuery = from e in _context.Quote
                                              orderby e.QuoteDate
                                              select e.QuoteDate;
             IQueryable<string> nameQuery = from e in _context.Quote
                                            orderby e.CustName
-                                           select e.CustName;
+                                           select e.CustName;*/
             // using System.Linq;
             var quotes = from q in _context.Quote
                          select q;
@@ -47,7 +47,7 @@ namespace MegaDeskRazorPages.Pages.Quotes
             {
                 quotes = quotes.Where(s => s.CustName.Contains(SearchString));
             }
-            if (!string.IsNullOrEmpty(CustomerName))
+ /*           if (!string.IsNullOrEmpty(CustomerName))
             {
                 quotes = quotes.Where(x => x.CustName == CustomerName);
             }
@@ -55,10 +55,10 @@ namespace MegaDeskRazorPages.Pages.Quotes
             if (DateTime.Equals(QuDate, DateTime.MinValue))
             {
                 quotes = quotes.Where(d => d.QuoteDate == QuDate);
-            }
+            }*/
 
-            DateAdded = new SelectList(await dateQuery.Distinct().ToListAsync());
-            CustNames = new SelectList(await nameQuery.Distinct().ToListAsync());
+/*            DateAdded = new SelectList(await dateQuery.Distinct().ToListAsync());
+            CustNames = new SelectList(await nameQuery.Distinct().ToListAsync());*/
             Quote = await quotes.ToListAsync();
         }
     }
