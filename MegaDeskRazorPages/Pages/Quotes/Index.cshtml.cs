@@ -33,23 +33,23 @@ namespace MegaDeskRazorPages.Pages.Quotes
         public async Task OnGetAsync(string sortOrder)
         {
             // Search Feature
-            var quotes = from q in _context.Quote
-                         select q;
+            /*var quoteIQ = from q in _context.Quote
+                         select q;*/
+            IQueryable<Quote> quoteIQ = from s in _context.Quote
+                                        select s;
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                quotes = quotes.Where(s => s.CustName.Contains(SearchString));
+                quoteIQ = quoteIQ.Where(s => s.CustName.Contains(SearchString));
             }
 
-            Quote = await quotes.ToListAsync();
-            
+            /*Quote = await quotes.ToListAsync();*/
+
             // Sort Feature
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
 
-            IQueryable<Quote> quoteIQ = from s in _context.Quote
-                                        select s;
-            
+
             switch (sortOrder)
             {
                 case "name_desc":
