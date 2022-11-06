@@ -21,12 +21,34 @@ namespace MegaDeskRazorPages.Pages.Quotes
 
         public IList<Quote> Quote { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public string DateSort { get; set; }
+        public string NameSort { get; set; }
+
+        public async Task OnGetAsync(string sortOrder)
         {
-            if (_context.Quote != null)
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+
+            IQueryable<Quote> quoteIQ = from s in _context.Quote
+                                        select s;
+            
+            switch (sortOrder)
             {
-                Quote = await _context.Quote.ToListAsync();
+                case "name_desc":
+                    quoteIQ = quoteIQ.OrderByDescending(s => s.CustName);
+                    break;
+                case "Date":
+                    quoteIQ = quoteIQ.OrderBy(s => s.QuoteDate);
+                    break;
+                case "date_desc":
+                    quoteIQ = quoteIQ.OrderByDescending(s => s.QuoteDate);
+                    break;
+                default:
+                    quoteIQ = quoteIQ.OrderBy(s => s.CustName);
+                    break;
             }
+            Quote = await quoteIQ.AsNoTracking().ToListAsync();
+
         }
     }
 }
