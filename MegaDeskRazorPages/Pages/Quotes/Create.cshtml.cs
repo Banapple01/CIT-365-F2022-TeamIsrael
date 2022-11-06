@@ -36,6 +36,10 @@ namespace MegaDeskRazorPages.Pages.Quotes
                 return Page();
             }
             Quote.Total = CalcTotal();
+            Quote.MatPrice = CalcMatPrice();
+            Quote.ShipPrice = CalcShipPrice();
+            Quote.DrawerPrice = CalcDrawerPrice();
+            Quote.SizePrice = CalcSizePrice();
             _context.Quote.Add(Quote);
             await _context.SaveChangesAsync();
 

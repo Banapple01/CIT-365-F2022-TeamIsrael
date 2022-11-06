@@ -24,3 +24,11 @@ body {
 .nav-link:hover {
     transform: scale(1.1);
 }
+
+.col-sm-2, .col-sm-10 {
+    padding: 10px;
+}
+
+.home-image {
+    width: 80vw;
+}

@@ -25,13 +25,24 @@ namespace MegaDeskRazorPages.Models
         [Required]
         public int Drawers { get; set; }
 
+        [Display(Name = "Drawer Price")]
+        public int DrawerPrice { get; set; }
+        [Display(Name = "Oversize Price")]
+        public int SizePrice { get; set; }
+        [Display(Name = "Shipping Price")]
+        public int ShipPrice { get; set; }
+        [Display(Name = "Material Price")]
+        public int MatPrice { get; set; }
+
         [Display(Name = "Customer Name")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string CustName { get; set; }
 
+
         [Display(Name = "Surface Material")]
         [Required]
+
         public string Material { get; set; }
 
         [Display(Name = "Quote Date")]
@@ -52,7 +63,7 @@ namespace MegaDeskRazorPages.Models
         public const int BASEPRICE = 200;
         public const int DRAWERPRICE = 50;
 
-        enum DeskMaterial
+        public enum DeskMaterial
         {
             laminate,
             oak,

@@ -16,13 +16,17 @@ namespace MegaDeskRazorPages.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Rush = table.Column<int>(type: "int", nullable: false),
-                    Total = table.Column<int>(type: "int", nullable: false),
                     Width = table.Column<int>(type: "int", nullable: false),
                     Depth = table.Column<int>(type: "int", nullable: false),
                     Drawers = table.Column<int>(type: "int", nullable: false),
+                    DrawerPrice = table.Column<int>(type: "int", nullable: false),
+                    SizePrice = table.Column<int>(type: "int", nullable: false),
+                    ShipPrice = table.Column<int>(type: "int", nullable: false),
+                    MatPrice = table.Column<int>(type: "int", nullable: false),
                     CustName = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     Material = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
-                    QuoteDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    QuoteDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Total = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

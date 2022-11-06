@@ -14,7 +14,7 @@ namespace MegaDeskRazorPages
         {
             var host = CreateHostBuilder(args).Build();
 
-            using (var scope = host.Services.CreateScope())
+            /*using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
 
@@ -27,7 +27,7 @@ namespace MegaDeskRazorPages
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred seeding the DB.");
                 }
-            }
+            }*/
 
             host.Run();
         }
