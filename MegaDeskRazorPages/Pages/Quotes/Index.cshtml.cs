@@ -27,19 +27,12 @@ namespace MegaDeskRazorPages.Pages.Quotes
         [BindProperty(SupportsGet = true)]
         public string ? CustomerName { get; set; }
 
-/*        public SelectList ? DateAdded { get; set; }
-        [BindProperty(SupportsGet = true)]
-        public DateTime ? QuDate { get; set; }*/
+        public string DateSort { get; set; }
+        public string NameSort { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
-/*            IQueryable<DateTime> dateQuery = from e in _context.Quote
-                                             orderby e.QuoteDate
-                                             select e.QuoteDate;
-            IQueryable<string> nameQuery = from e in _context.Quote
-                                           orderby e.CustName
-                                           select e.CustName;*/
-            // using System.Linq;
+            // Search Feature
             var quotes = from q in _context.Quote
                          select q;
 
@@ -47,19 +40,32 @@ namespace MegaDeskRazorPages.Pages.Quotes
             {
                 quotes = quotes.Where(s => s.CustName.Contains(SearchString));
             }
- /*           if (!string.IsNullOrEmpty(CustomerName))
-            {
-                quotes = quotes.Where(x => x.CustName == CustomerName);
-            }
 
-            if (DateTime.Equals(QuDate, DateTime.MinValue))
-            {
-                quotes = quotes.Where(d => d.QuoteDate == QuDate);
-            }*/
-
-/*            DateAdded = new SelectList(await dateQuery.Distinct().ToListAsync());
-            CustNames = new SelectList(await nameQuery.Distinct().ToListAsync());*/
             Quote = await quotes.ToListAsync();
+            
+            // Sort Feature
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+
+            IQueryable<Quote> quoteIQ = from s in _context.Quote
+                                        select s;
+            
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    quoteIQ = quoteIQ.OrderByDescending(s => s.CustName);
+                    break;
+                case "Date":
+                    quoteIQ = quoteIQ.OrderBy(s => s.QuoteDate);
+                    break;
+                case "date_desc":
+                    quoteIQ = quoteIQ.OrderByDescending(s => s.QuoteDate);
+                    break;
+                default:
+                    quoteIQ = quoteIQ.OrderBy(s => s.CustName);
+                    break;
+            }
+            Quote = await quoteIQ.AsNoTracking().ToListAsync();
         }
     }
 }
