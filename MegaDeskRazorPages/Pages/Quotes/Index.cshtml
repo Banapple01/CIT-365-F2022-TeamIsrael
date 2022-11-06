@@ -29,6 +29,26 @@
 <div class="buttonWrap">
     <a asp-page="Create"><div class="addButton">Add Quote</div></a>
     </div>
+<form>
+    <p>
+@*        <div class="form-group">
+            <label class="form-label mt-4">Select Date</label>
+            <select asp-for="QuDate" asp-items="Model.DateAdded" class="form-select">
+                <option value="">All</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label mt-4">Select Customer Name</label>
+            <select asp-for="CustomerName" asp-items="Model.CustNames" class="form-select">
+                <option value="">All</option>
+            </select>
+        </div>*@
+        <div class="form-group">
+            <input type="text" asp-for="SearchString" placeholder="Customer Name"/>
+            <input type="submit" value="Search" />
+        </div>
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>

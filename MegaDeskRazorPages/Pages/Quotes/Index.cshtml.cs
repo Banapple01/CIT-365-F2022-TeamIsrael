@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MegaDeskRazorPages.Data;
 using MegaDeskRazorPages.Models;
@@ -20,12 +21,29 @@ namespace MegaDeskRazorPages.Pages.Quotes
         }
 
         public IList<Quote> Quote { get;set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public string ? SearchString { get; set; }
+        public SelectList ? CustNames { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string ? CustomerName { get; set; }
 
         public string DateSort { get; set; }
         public string NameSort { get; set; }
 
         public async Task OnGetAsync(string sortOrder)
         {
+            // Search Feature
+            var quotes = from q in _context.Quote
+                         select q;
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                quotes = quotes.Where(s => s.CustName.Contains(SearchString));
+            }
+
+            Quote = await quotes.ToListAsync();
+            
+            // Sort Feature
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
 
@@ -48,7 +66,6 @@ namespace MegaDeskRazorPages.Pages.Quotes
                     break;
             }
             Quote = await quoteIQ.AsNoTracking().ToListAsync();
-
         }
     }
 }
