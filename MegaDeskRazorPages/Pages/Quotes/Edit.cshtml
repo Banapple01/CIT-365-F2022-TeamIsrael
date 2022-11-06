@@ -143,7 +143,7 @@
                 </div>
                 <div class="form-group column half">
                     <label asp-for="Quote.Total" class="control-label"></label>
-                    <input asp-for="Quote.Total" class="form-control" />
+                    <p><strong>$@Html.DisplayFor(model => model.Quote.Total)</strong></p>
                     <span asp-validation-for="Quote.Total" class="text-danger"></span>
                 </div>
             </div>
