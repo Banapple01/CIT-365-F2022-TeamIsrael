@@ -44,17 +44,17 @@
                 <div class="formRow">
                     <div class="form-group column third" id="width">
                         <label asp-for="Quote.Width" class="control-label"></label>
-                        <input asp-for="Quote.Width" class="form-control" />
+                        <input asp-for="Quote.Width" class="form-control" min="24" max="96" />
                         <span asp-validation-for="Quote.Width" class="text-danger"></span>
                     </div>
                     <div class="form-group column third" id="depth">
                         <label asp-for="Quote.Depth" class="control-label"></label>
-                        <input asp-for="Quote.Depth" class="form-control" />
+                        <input asp-for="Quote.Depth" class="form-control" min="12" max="48" />
                         <span asp-validation-for="Quote.Depth" class="text-danger"></span>
                     </div>
                     <div class="form-group column third" id="drawers">
                         <label asp-for="Quote.Drawers" class="control-label"></label>
-                        <input asp-for="Quote.Drawers" class="form-control" />
+                    <input asp-for="Quote.Drawers" class="form-control" min="0" max="7" />
                         <span asp-validation-for="Quote.Drawers" class="text-danger"></span>
                     </div>
                 </div>
@@ -62,23 +62,23 @@
                     <div class="form-group column twoThird" id="material">
                         <label asp-for="Quote.Material" class="control-label"></label>
                         <div class="form-control radio-btn">
-                            <input type="radio" checked="checked" class="radio" value="oak" name="Material" />
+                            <input type="radio" class="radio" value="oak" asp-for="Quote.Material" />
                             <label class="control-label"><img src="~/images/oak.jpg" width="50" />  Oak $200</label>
-                            </div>
+                        </div>
                         <div class="form-control radio-btn">
-                            <input type="radio" checked="checked" class="radio" value="laminate" name="Material" />
+                            <input type="radio" class="radio" value="laminate" asp-for="Quote.Material" />
                             <label class="control-label"><img src="~/images/laminate.jpg" width="50"/>  Laminate $100</label>
                         </div>
                         <div class="form-control radio-btn">
-                            <input type="radio" checked="checked" class="radio" value="pine" name="Material" />
+                            <input type="radio" class="radio" value="pine" asp-for="Quote.Material" />
                             <label class="control-label"><img src="~/images/pine.jpg" width="50" />  Pine $50</label>
                         </div>
                         <div class="form-control radio-btn">
-                            <input type="radio" checked="checked" class="radio" value="rosewood" name="Material" />
+                            <input type="radio" class="radio" value="rosewood" asp-for="Quote.Material" />
                             <label class="control-label"><img src="~/images/rosewood.jpg" width="50" />  Rosewood $300</label>
                         </div>
                         <div class="form-control radio-btn">
-                            <input type="radio" checked="checked" class="radio" value="veneer" name="Material" />
+                            <input type="radio" class="radio" value="veneer" asp-for="Quote.Material" />
                             <label class="control-label"><img src="~/images/veneer.jpg" width="50" />  Veneer $125</label>
                         </div>
                         <span asp-validation-for="Quote.Material" class="text-danger"></span>
@@ -97,11 +97,7 @@
                         <span asp-validation-for="Quote.Rush" class="text-danger"></span>
                     </div>
                 </div>
-                    <div class="form-group column half" id="total">
-                        <label asp-for="Quote.Total" class="control-label"></label>
-                        <span asp-validation-for="Quote.Total" class="text-danger"></span>
-                    </div>
-                </div>
+            </div>
             <div class="buttonWrap">
                 <div class="form-group" id="submit">
                     <input type="submit" value="Create" class="addButton" />

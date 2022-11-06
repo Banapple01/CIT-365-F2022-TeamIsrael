@@ -10,9 +10,19 @@ namespace MegaDeskRazorPages.Models
     public class Quote
     {
         public int ID { get; set; }
+
+        [Display(Name = "Production Time")]
+        [Required]
         public int Rush { get; set; }
+
+        [Required]
         public int Width { get; set; }
+
+        [Required]
         public int Depth { get; set; }
+
+        [Display(Name = "Number of Drawers")]
+        [Required]
         public int Drawers { get; set; }
 
         [Display(Name = "Customer Name")]
@@ -21,12 +31,12 @@ namespace MegaDeskRazorPages.Models
         public string CustName { get; set; }
 
         [Display(Name = "Surface Material")]
-        [StringLength(60, MinimumLength = 3)]
         [Required]
         public string Material { get; set; }
 
         [Display(Name = "Quote Date")]
         [DataType(DataType.Date)]
+        [Required]
         public DateTime QuoteDate { get; set; }
 
         public int Total { get; set; }
