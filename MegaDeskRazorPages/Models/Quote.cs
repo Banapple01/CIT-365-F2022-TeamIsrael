@@ -51,7 +51,7 @@ namespace MegaDeskRazorPages.Models
         public const int BASEPRICE = 200;
         public const int DRAWERPRICE = 50;
 
-        enum DeskMaterial
+        public enum DeskMaterial
         {
             laminate,
             oak,
