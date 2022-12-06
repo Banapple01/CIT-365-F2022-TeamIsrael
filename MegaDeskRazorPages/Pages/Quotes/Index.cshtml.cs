@@ -27,8 +27,8 @@ namespace MegaDeskRazorPages.Pages.Quotes
         [BindProperty(SupportsGet = true)]
         public string ? CustomerName { get; set; }
 
-        public string DateSort { get; set; }
-        public string NameSort { get; set; }
+        public string ? DateSort { get; set; }
+        public string ? NameSort { get; set; }
 
         public async Task OnGetAsync(string sortOrder)
         {
