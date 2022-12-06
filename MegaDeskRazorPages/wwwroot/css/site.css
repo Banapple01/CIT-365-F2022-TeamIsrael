@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
 
 html {
-  font-size: 14px;
+    font-size: 14px;
+}
+
+html, body, footer, header {
+    background-color: #edede9;
 }
 
 @media (min-width: 768px) {
