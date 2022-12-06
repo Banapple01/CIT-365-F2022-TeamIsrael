@@ -38,5 +38,7 @@ namespace SacramentPlanner.Models
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string ClosingPrayer { get; set; }
+
+        public List<Speaker>? Speakers { get; set; }
     }
 }

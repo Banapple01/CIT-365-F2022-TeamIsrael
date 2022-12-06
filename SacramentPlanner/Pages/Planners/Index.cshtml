@@ -13,12 +13,31 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Planner[0].PlannerDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planner[0].Conducting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planner[0].Presiding)
+            </th>
+            
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Planner) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlannerDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Conducting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presiding)
+            </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
