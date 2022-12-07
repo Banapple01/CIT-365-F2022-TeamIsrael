@@ -16,25 +16,31 @@ namespace SacramentPlanner.Models
         [StringLength(60, MinimumLength = 3)]
         public string Presiding { get; set; }
 
+        [Display(Name = "Opening Hymn")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string OpeningHymn { get; set; }
 
+        [Display(Name = "Sacrament Hymn")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string SacramentHymn { get; set; }
 
+        [Display(Name = "Closing Hymn")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string ClosingHymn { get; set; }
 
+        [Display(Name = "Intermediate Hymn")]
         [StringLength(60, MinimumLength = 3)]
         public string IntermediateHymn { get; set; }
 
+        [Display(Name = "Opening Prayer")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string OpeningPrayer { get; set; }
 
+        [Display(Name = "Closing Prayer")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string ClosingPrayer { get; set; }
