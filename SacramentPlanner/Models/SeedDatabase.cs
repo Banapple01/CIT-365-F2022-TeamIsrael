@@ -25,7 +25,7 @@ public class SeedDatabase
             context.Planner.AddRange(
                 new Planner
                 {
-                    PlannerDate = DateTime.Now,
+                    PlannerDate = new DateTime(2018, 7, 20),
                     Conducting = "Billy Thorpe",
                     Presiding = "Charlie Jones",
                     OpeningHymn = "I am Like a Star",
@@ -45,7 +45,7 @@ public class SeedDatabase
 
                 new Planner
                 {
-                    PlannerDate = DateTime.Now,
+                    PlannerDate = new DateTime(2022, 3, 12),
                     Conducting = "Harry Potter",
                     Presiding = "Albus Dumbledor",
                     OpeningHymn = "Double, Double, Toil and Trouble",
