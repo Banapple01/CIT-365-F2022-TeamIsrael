@@ -39,6 +39,38 @@ namespace SacramentPlanner.Models
         [Required]
         public string ClosingPrayer { get; set; }
 
-        public List<Speaker>? Speakers { get; set; }
+        [Display(Name = "Speaker 1")]
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string Speaker1 { get; set; }
+
+        [Display(Name = "Speaker 2")]
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string Speaker2 { get; set; }
+
+        [Display(Name = "Speaker 3")]
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string Speaker3 { get; set; }
+
+        [Display(Name = "Topic 1")]
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string Topic1 { get; set; }
+
+        [Display(Name = "Topic 2")]
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string Topic2 { get; set; }
+
+        [Display(Name = "Topic 3")]
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        public string Topic3 { get; set; }
+
+        //public List<string> Speakers { get; set; }
+
+        //public List<string> Topics { get; set; }
     }
 }

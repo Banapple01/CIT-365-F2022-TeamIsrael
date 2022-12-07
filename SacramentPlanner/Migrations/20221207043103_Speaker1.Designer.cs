@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SacramentPlanner.Data;
 
@@ -11,9 +12,10 @@ using SacramentPlanner.Data;
 namespace SacramentPlanner.Migrations
 {
     [DbContext(typeof(SacramentPlannerContext))]
-    partial class SacramentPlannerContextModelSnapshot : ModelSnapshot
+    [Migration("20221207043103_Speaker1")]
+    partial class Speaker1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,37 +77,51 @@ namespace SacramentPlanner.Migrations
 
                     b.Property<string>("Speaker1")
                         .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Speaker2")
+                    b.HasKey("Id");
+
+                    b.ToTable("Planner");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("PlannerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SpeakerName")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
-                    b.Property<string>("Speaker3")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("Topic1")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("Topic2")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("Topic3")
+                    b.Property<string>("SpeakerSubject")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Planner");
+                    b.HasIndex("PlannerId");
+
+                    b.ToTable("Speaker");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
+                {
+                    b.HasOne("SacramentPlanner.Models.Planner", null)
+                        .WithMany("Speakers")
+                        .HasForeignKey("PlannerId");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.Planner", b =>
+                {
+                    b.Navigation("Speakers");
                 });
 #pragma warning restore 612, 618
         }

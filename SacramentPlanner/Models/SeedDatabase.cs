@@ -34,7 +34,12 @@ public class SeedDatabase
                     ClosingHymn = "Popcorn Popping on the Apricot Tree",
                     OpeningPrayer = "Jenny Collins",
                     ClosingPrayer = "Alfalfa Gerard",
-                    //Speakers = { SpeakerName = "Julie Brown", SpeakerSubject = ""}
+                    Speaker1 = "Julie Brown",
+                    Speaker2 = "Gabe Schnell",
+                    Speaker3 = "James May",
+                    Topic1 = "Atonement",
+                    Topic2 = "Word of Wisdom",
+                    Topic3 = "Ministering"
 
                 },
 
@@ -48,7 +53,13 @@ public class SeedDatabase
                     IntermediateHymn = "",
                     ClosingHymn = "Diagon Alley",
                     OpeningPrayer = "Jenny Weasley",
-                    ClosingPrayer = "George Weasley"
+                    ClosingPrayer = "George Weasley",
+                    Speaker1 = "Parvati Patil",
+                    Speaker2 = "Neville LongBottom",
+                    Speaker3 = "Peter Pettigrew",
+                    Topic1 = "Faith",
+                    Topic2 = "CTR",
+                    Topic3 = "Charity"
                 },
 
                 new Planner
@@ -61,7 +72,13 @@ public class SeedDatabase
                     IntermediateHymn = "Special Musical Number",
                     ClosingHymn = "Hark, The Herald Angels Sing",
                     OpeningPrayer = "Dallin Oaks",
-                    ClosingPrayer = "Joseph Smith"
+                    ClosingPrayer = "Joseph Smith",
+                    Speaker1 = "Thomas Monson",
+                    Speaker2 = "Emma Smith",
+                    Speaker3 = "John Bytheway",
+                    Topic1 = "Family History",
+                    Topic2 = "Trials",
+                    Topic3 = "Holy Ghost"
                 }
             );
             context.SaveChanges();
