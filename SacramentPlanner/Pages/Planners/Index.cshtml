@@ -10,6 +10,25 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        Date: <input type="text" asp-for="SearchString" />
+    </p>
+    <p>
+        Sort: <br>
+        <input type="radio" asp-for="SortString" id="conducting" name="sorting" value="Conducting">
+        <label for="conducting">Conducting</label><br>
+        <input type="radio" asp-for="SortString" id="date" name="sorting" value="Date">
+        <label for="date">Date</label><br>
+        <input type="radio" asp-for="SortString" id="presiding" name="sorting" value="Presiding">
+        <label for="presiding">Presiding</label>
+    </p>
+    <p>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
