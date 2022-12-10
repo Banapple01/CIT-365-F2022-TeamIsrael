@@ -12,8 +12,8 @@ using SacramentPlanner.Data;
 namespace SacramentPlanner.Migrations
 {
     [DbContext(typeof(SacramentPlannerContext))]
-    [Migration("20221207043808_Speaker3")]
-    partial class Speaker3
+    [Migration("20221210024556_InitialMigrate")]
+    partial class InitialMigrate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -108,6 +108,50 @@ namespace SacramentPlanner.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Planner");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
+                {
+                    b.Property<int>("SpeakerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SpeakerId"), 1L, 1);
+
+                    b.Property<int>("PlannerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SpeakerName")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
+                    b.Property<string>("SpeakerSubject")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
+                    b.HasKey("SpeakerId");
+
+                    b.HasIndex("PlannerId");
+
+                    b.ToTable("Speaker");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.Speaker", b =>
+                {
+                    b.HasOne("SacramentPlanner.Models.Planner", "Planner")
+                        .WithMany("Speakers")
+                        .HasForeignKey("PlannerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Planner");
+                });
+
+            modelBuilder.Entity("SacramentPlanner.Models.Planner", b =>
+                {
+                    b.Navigation("Speakers");
                 });
 #pragma warning restore 612, 618
         }
