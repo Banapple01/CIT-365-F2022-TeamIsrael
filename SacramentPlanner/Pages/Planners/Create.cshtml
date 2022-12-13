@@ -1,5 +1,5 @@
 ﻿@page
-@model SacramentPlanner.Pages.Planners.CreateModel
+@model ProgramView
 
 @{
     ViewData["Title"] = "Create";
@@ -58,7 +58,17 @@
                 <input asp-for="Planner.ClosingPrayer" class="form-control" />
                 <span asp-validation-for="Planner.ClosingPrayer" class="text-danger"></span>
             </div>
+             <div class="form-group">
+            <label asp-for="Speaker.SpeakerName" class="control-label"></label>
+            <input asp-for="Speaker.SpeakerName" class="form-control" />
+            <span asp-validation-for="Speaker.SpeakerName" class="text-danger"></span>
+            </div>
             <div class="form-group">
+            <label asp-for="Speaker.SpeakerSubject" class="control-label"></label>
+            <input asp-for="Speaker.SpeakerSubject" class="form-control" />
+            <span asp-validation-for="Speaker.SpeakerSubject" class="text-danger"></span>
+            </div>
+           @* <div class="form-group">
                 <label asp-for="Planner.Speaker1" class="control-label"></label>
                 <input asp-for="Planner.Speaker1" class="form-control" />
                 <span asp-validation-for="Planner.Speaker1" class="text-danger"></span>
@@ -72,8 +82,8 @@
                 <label asp-for="Planner.Speaker3" class="control-label"></label>
                 <input asp-for="Planner.Speaker3" class="form-control" />
                 <span asp-validation-for="Planner.Speaker3" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+@*            <div class="form-group">
                 <label asp-for="Planner.Topic1" class="control-label"></label>
                 <input asp-for="Planner.Topic1" class="form-control" />
                 <span asp-validation-for="Planner.Topic1" class="text-danger"></span>
@@ -87,7 +97,7 @@
                 <label asp-for="Planner.Topic3" class="control-label"></label>
                 <input asp-for="Planner.Topic3" class="form-control" />
                 <span asp-validation-for="Planner.Topic3" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
