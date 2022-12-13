@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace SacramentPlanner.Models
 {
@@ -75,8 +76,12 @@ namespace SacramentPlanner.Models
         [Required]
         public string Topic3 { get; set; }
 
-        //public List<string> Speakers { get; set; }
+        public virtual ICollection<Speaker> Speakers { get; set; }
+        
+        //public List<string>? Peeps { get; set; }
+        
+        //public List<Speaker>? Speakers { get; set; }
 
-        //public List<string> Topics { get; set; }
+        //public List<Speaker>? Topics { get; set; }
     }
 }
