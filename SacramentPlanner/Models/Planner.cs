@@ -5,7 +5,7 @@ namespace SacramentPlanner.Models
 {
     public class Planner
     {
-        public int Id { get; set; }
+        public int PlannerId { get; set; }
 
         [Display(Name = "Planner Date")]
         [DataType(DataType.Date)]
@@ -19,17 +19,17 @@ namespace SacramentPlanner.Models
 
         [Display(Name = "Opening Hymn")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string OpeningHymn { get; set; }
 
         [Display(Name = "Sacrament Hymn")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string SacramentHymn { get; set; }
 
         [Display(Name = "Closing Hymn")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string ClosingHymn { get; set; }
 
         [Display(Name = "Intermediate Hymn")]
@@ -38,42 +38,42 @@ namespace SacramentPlanner.Models
 
         [Display(Name = "Opening Prayer")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string OpeningPrayer { get; set; }
 
         [Display(Name = "Closing Prayer")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string ClosingPrayer { get; set; }
 
         [Display(Name = "Speaker 1")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string Speaker1 { get; set; }
 
         [Display(Name = "Speaker 2")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string Speaker2 { get; set; }
 
         [Display(Name = "Speaker 3")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string Speaker3 { get; set; }
 
         [Display(Name = "Topic 1")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string Topic1 { get; set; }
 
         [Display(Name = "Topic 2")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string Topic2 { get; set; }
 
         [Display(Name = "Topic 3")]
         [StringLength(60, MinimumLength = 3)]
-        [Required]
+        //[Required]
         public string Topic3 { get; set; }
 
         public virtual ICollection<Speaker> Speakers { get; set; }

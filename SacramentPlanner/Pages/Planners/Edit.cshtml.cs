@@ -30,7 +30,7 @@ namespace SacramentPlanner.Pages.Planners
                 return NotFound();
             }
 
-            var planner =  await _context.Planner.FirstOrDefaultAsync(m => m.Id == id);
+            var planner =  await _context.Planner.FirstOrDefaultAsync(m => m.PlannerId == id);
             if (planner == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace SacramentPlanner.Pages.Planners
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PlannerExists(Planner.Id))
+                if (!PlannerExists(Planner.PlannerId))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace SacramentPlanner.Pages.Planners
 
         private bool PlannerExists(int id)
         {
-          return _context.Planner.Any(e => e.Id == id);
+          return _context.Planner.Any(e => e.PlannerId == id);
         }
     }
 }

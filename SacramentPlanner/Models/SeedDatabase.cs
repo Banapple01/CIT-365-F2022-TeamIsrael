@@ -8,7 +8,7 @@ public class SeedDatabase
 {
     public static void Initialize(IServiceProvider serviceProvider)
     {
-        using (var context = new SacramentPlannerContext(
+        /*using (var context = new SacramentPlannerContext(
             serviceProvider.GetRequiredService<
                 DbContextOptions<SacramentPlannerContext>>()))
         {
@@ -90,7 +90,7 @@ public class SeedDatabase
             var speakers = new List<Speaker> {
                 new Speaker
                 {
-                    Planner = context.Planner.FirstOrDefault(d => d.Id == 1),
+                    Planner = context.Planner.FirstOrDefault(d => d.Id == 2),
                     SpeakerName = "Joe",
                     SpeakerSubject = "Souls"
                 },
@@ -111,6 +111,6 @@ public class SeedDatabase
             };
             context.Planner.FirstOrDefault(d => d.Id == 1).Speakers.Add(speakers[0]);
             context.SaveChanges();
-        }
+        }*/
     }
 }

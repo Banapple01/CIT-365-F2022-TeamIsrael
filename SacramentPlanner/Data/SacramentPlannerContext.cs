@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,18 @@ namespace SacramentPlanner.Data
         }
 
         public DbSet<SacramentPlanner.Models.Planner> Planner { get; set; } = default!;
-        /*public DbSet<SacramentPlanner.Models.Planner> Speaker { get; set; } = default!;*/
+        public DbSet<SacramentPlanner.Models.Speaker> Speaker { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Planner>()
+                .HasIndex(m => m.PlannerDate)
+            .IsUnique();
+
+            builder.Entity<Speaker>()
+                .HasIndex(m => new { m.SpeakerName })
+                .IsUnique();
+
+        }
     }
 }

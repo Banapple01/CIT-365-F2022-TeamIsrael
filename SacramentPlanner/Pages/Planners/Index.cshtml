@@ -19,7 +19,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Planner[0].Conducting)
             </th>
-            <th>
+          @*<th>
                 @Html.DisplayNameFor(model => model.Planner[0].Presiding)
             </th>
             <th>
@@ -57,6 +57,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Planner[0].Topic3)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Planner[0].Speakers)
             </th>
             <th></th>
         </tr>
@@ -70,7 +73,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Conducting)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Presiding)
             </td>
             <td>
@@ -108,11 +111,14 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Topic3)
-            </td>
+            </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Speakers)
+                </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.PlannerId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PlannerId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PlannerId">Delete</a>
             </td>
         </tr>
 }

@@ -29,7 +29,7 @@ namespace SacramentPlanner.Pages.Planners
                 return NotFound();
             }
 
-            var planner = await _context.Planner.FirstOrDefaultAsync(m => m.Id == id);
+            var planner = await _context.Planner.FirstOrDefaultAsync(m => m.PlannerId == id);
 
             if (planner == null)
             {
