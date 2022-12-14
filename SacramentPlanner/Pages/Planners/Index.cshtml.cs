@@ -21,12 +21,24 @@ namespace SacramentPlanner.Pages.Planners
 
         public IList<Planner> Planner { get;set; } = default!;
 
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
         public async Task OnGetAsync()
         {
-            if (_context.Planner != null)
+            //if (_context.Planner != null)
+            //{
+            //    Planner = await _context.Planner.ToListAsync();
+            //}
+
+            var plans = from s in _context.Planner
+                         select s;
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Planner = await _context.Planner.ToListAsync();
+                plans = plans.Where(s => s.PlannerDate.ToString().Contains(SearchString));
             }
+
+            Planner = await plans.AsNoTracking().ToListAsync();
         }
     }
 }
