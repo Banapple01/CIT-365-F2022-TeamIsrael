@@ -23,10 +23,7 @@ namespace SacramentPlanner.Pages.Planners
 
         public async Task OnGetAsync()
         {
-            var plans = from s in _context.Planner
-                         select s;
-
-            if (!string.IsNullOrEmpty(SearchString))
+            if (_context.Planner != null)
             {
                 Planner = await _context.Planner.ToListAsync();
             }
