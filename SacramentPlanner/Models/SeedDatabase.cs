@@ -41,7 +41,7 @@ public class SeedDatabase
                     Topic1 = "Atonement",
                     Topic2 = "Word of Wisdom",
                     Topic3 = "Ministering",
-                    Speakers = new List<Speaker>()
+                    /*Speakers = new List<Speaker>()*/
 
                 },
 
@@ -62,7 +62,7 @@ public class SeedDatabase
                     Topic1 = "Faith",
                     Topic2 = "CTR",
                     Topic3 = "Charity",
-                    Speakers = new List<Speaker>()
+                    /*Speakers = new List<Speaker>()*/
                 },
 
                 new Planner
@@ -82,12 +82,12 @@ public class SeedDatabase
                     Topic1 = "Family History",
                     Topic2 = "Trials",
                     Topic3 = "Holy Ghost",
-                    Speakers = new List<Speaker>()
+                    /*Speakers = new List<Speaker>()*/
                 }
             );
             context.SaveChanges();
 
-            var speakers = new List<Speaker> {
+            /*var speakers = new List<Speaker> {
                 new Speaker
                 {
                     Planner = context.Planner.FirstOrDefault(d => d.Id == 1),
@@ -110,7 +110,7 @@ public class SeedDatabase
                 }
             };
             context.Planner.FirstOrDefault(d => d.Id == 1).Speakers.Add(speakers[0]);
-            context.SaveChanges();
+            context.SaveChanges();*/
         }
     }
 }

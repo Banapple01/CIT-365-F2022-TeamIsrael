@@ -76,7 +76,7 @@ namespace SacramentPlanner.Models
         [Required]
         public string Topic3 { get; set; }
 
-        public virtual ICollection<Speaker> Speakers { get; set; }
+        /*public virtual ICollection<Speaker> Speakers { get; set; }*/
         
         //public List<string>? Peeps { get; set; }
         
