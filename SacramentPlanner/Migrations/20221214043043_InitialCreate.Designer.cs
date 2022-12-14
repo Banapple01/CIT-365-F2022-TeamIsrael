@@ -12,8 +12,8 @@ using SacramentPlanner.Data;
 namespace SacramentPlanner.Migrations
 {
     [DbContext(typeof(SacramentPlannerContext))]
-    [Migration("20221207043808_Speaker3")]
-    partial class Speaker3
+    [Migration("20221214043043_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

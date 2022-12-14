@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SacramentPlanner.Data;
+using System.Linq;
 
 namespace SacramentPlanner.Models;
 
@@ -39,7 +40,8 @@ public class SeedDatabase
                     Speaker3 = "James May",
                     Topic1 = "Atonement",
                     Topic2 = "Word of Wisdom",
-                    Topic3 = "Ministering"
+                    Topic3 = "Ministering",
+                    /*Speakers = new List<Speaker>()*/
 
                 },
 
@@ -59,7 +61,8 @@ public class SeedDatabase
                     Speaker3 = "Peter Pettigrew",
                     Topic1 = "Faith",
                     Topic2 = "CTR",
-                    Topic3 = "Charity"
+                    Topic3 = "Charity",
+                    /*Speakers = new List<Speaker>()*/
                 },
 
                 new Planner
@@ -78,10 +81,36 @@ public class SeedDatabase
                     Speaker3 = "John Bytheway",
                     Topic1 = "Family History",
                     Topic2 = "Trials",
-                    Topic3 = "Holy Ghost"
+                    Topic3 = "Holy Ghost",
+                    /*Speakers = new List<Speaker>()*/
                 }
             );
             context.SaveChanges();
+
+            /*var speakers = new List<Speaker> {
+                new Speaker
+                {
+                    Planner = context.Planner.FirstOrDefault(d => d.Id == 1),
+                    SpeakerName = "Joe",
+                    SpeakerSubject = "Souls"
+                },
+
+                new Speaker
+                {
+                    Planner = context.Planner.FirstOrDefault(d => d.Id == 2),
+                    SpeakerName = "Kelly",
+                    SpeakerSubject = "Heavenly Mother"
+                },
+
+                new Speaker
+                {
+                    Planner = context.Planner.FirstOrDefault(d => d.Id == 3),
+                    SpeakerName = "Ken",
+                    SpeakerSubject = "Heavenly Father"
+                }
+            };
+            context.Planner.FirstOrDefault(d => d.Id == 1).Speakers.Add(speakers[0]);
+            context.SaveChanges();*/
         }
     }
 }

@@ -15,5 +15,6 @@ namespace SacramentPlanner.Data
         }
 
         public DbSet<SacramentPlanner.Models.Planner> Planner { get; set; } = default!;
+        /*public DbSet<SacramentPlanner.Models.Speaker> Speaker { get; set; } = default!;*/
     }
 }
