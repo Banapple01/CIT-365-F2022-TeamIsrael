@@ -1,4 +1,4 @@
-html {
+/*html {
   font-size: 14px;
 }
 
@@ -12,21 +12,59 @@ html {
   position: relative;
   min-height: 100%;
 }
+*/
+/* styles for Sacrament Planner */
+html {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
 
 body {
-  margin-bottom: 60px;
+    background: url(SLTBack.jpg) no-repeat center center fixed;
+    background-size: cover;
+    margin-bottom: 60px;
 }
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #EAEBED;
+    padding: 15px;
+}
+
+.contentBody {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(234,235,237,0.9);
+    box-shadow: 2px 2px 4px #000000;
+    margin-top: 60px;
+    margin: 60px auto auto auto;
+    border-radius: 8px;
+    max-width: 600px;
+    padding: 30px;
+}
+
+.contentInner {
+    text-align: center;
+}
+
+.title {
+    font-weight: bold;
+}
+
 #wrapper {
     max-width: 500px;
     min-width: 450px;
     margin: 30px auto;
 }
 
+.form {
+    margin: auto;
+    width: 80%;
+}
+
 .formWrap {
-    border: solid black 2px;
-    border-radius: 8px;
-    padding: 15px;
-    width: 100%;
+    text-align: justify;
 }
 
 .formRow {
@@ -51,26 +89,92 @@ body {
 }
 
 .buttonWrap {
-    margin: 30px auto 0 auto;
-    width: 500px;
+    margin: 30px auto;
+    width: 300px;
     display: flex;
-    justify-content: space-around;
+}
+
+.flexColumn {
+    flex-direction: column;
+}
+
+.spaceBetween {
+    justify-content: space-between;
 }
 
 .addButton {
-    background: #000000;
+    margin: 0 auto 15px;
     border-radius: 8px;
     color: #ffffff;
     height: 40px;
-    width: 120px;
+    width: 100px;
     text-align: center;
 }
 
-    .addButton:hover {
-        background: #333333;
-    }
+.buttonBlack {
+    background: #000000;
+}
+
+.buttonBlue {
+    background: #3F88C5;
+}
+
+.addButton:hover {
+    background: #333333;
+}
 
 .buttonWrap a {
     text-decoration: none;
     line-height: 40px;
+}
+
+.buttonWrap input {
+    border: blue;
+}
+
+.filterForm {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filterButton {
+    width: 50px;
+    line-height: 20px;
+    border-radius: 3px;
+    color: #ffffff;
+    border: blue;
+}
+
+.table {
+    margin: auto;
+    width: 90%;
+    border-radius: 3px;
+}
+
+    .table tbody {
+        border: 2px solid #000000;
+    }
+
+    .table tr {
+        line-height: 25px;
+        border: 1px #000000 solid;
+    }
+
+    .table tbody tr:nth-of-type(even) {
+        background-color: #DAE6FB;
+    }
+
+    .table tbody tr:nth-of-type(odd) {
+        background-color: #FFFFFF;
+    }
+
+.mainMenu {
+    margin: 0 auto 15px;
+    border-radius: 8px;
+    color: #ffffff;
+    height: 40px;
+    width: 200px;
+    text-align: center;
 }
