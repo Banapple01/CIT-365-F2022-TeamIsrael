@@ -35,31 +35,8 @@ namespace SacramentPlanner.Pages.Planners
 
         public async Task OnGetAsync()
         {
-            //if (_context.Planner != null)
-            //{
-            //    Planner = await _context.Planner.ToListAsync();
-            //}
-
             var plans = from s in _context.Planner
                          select s;
-            if(!string.IsNullOrEmpty(SortString)){
-
-                switch (SortString)
-                {
-                    case "Conducting":
-                        plans = plans.OrderBy(s => s.Conducting);
-                        break;
-                    case "Date":
-                        plans = plans.OrderBy(s => s.PlannerDate);
-                        break;
-                    case "Presiding":
-                        plans = plans.OrderBy(s => s.Presiding);
-                        break;
-                    default:
-                        plans = plans.OrderBy(s => s.PlannerDate);
-                        break;
-                }
-            }
 
             if (!string.IsNullOrEmpty(SearchString))
             {

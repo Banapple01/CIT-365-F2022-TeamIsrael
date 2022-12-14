@@ -69,8 +69,5 @@ namespace SacramentPlanner.Models
         [Required]
         public string Topic3 { get; set; }
 
-        //public List<string> Speakers { get; set; }
-
-        //public List<string> Topics { get; set; }
     }
 }
