@@ -5,20 +5,16 @@
     ViewData["Title"] = "Index";
 }
 <div class="indexDiv">
-<h1>Planners</h1>
-
-<div class="createButton">
-    <a asp-page="Create">Create New</a>
-</div>
+<h1>Sacrament Meeting Planners</h1>
 
 <form>
-    <p>
-        Date: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" asp-for="SearchString" placeholder="Meeting Date"/>
+        <input type="submit" class="btn btn-primary" value="Filter" />
+    </div>
 </form>
 
-<table class="table">
+    <table class="table table-hover table-light">
     <thead>
         <tr>
             <th>
@@ -46,12 +42,19 @@
                 @Html.DisplayFor(modelItem => item.Presiding)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a class="btn btn-outline-info btn-sm" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-outline-info btn-sm" asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-outline-info btn-sm" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+</div>
+
+<div class="createButton">
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
 </div>

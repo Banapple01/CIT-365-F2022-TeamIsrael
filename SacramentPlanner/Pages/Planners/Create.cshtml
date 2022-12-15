@@ -6,8 +6,7 @@
 }
 
 <div class="contentInner">
-    <h1 class="title">Create Meeting</h1>
-    <p>Create the Sacrament Form</p>
+    <h1>Create Sacrament Meeting</h1>
     <br />
     <hr />
     <form method="post">
@@ -108,20 +107,18 @@
                     </div>
                 </div>
             </div>
+            <br />
+            <hr />
             <div class="optionWrap">
-                <div class="buttonBlue addbutton" id="submitbtn">
+                <div class="btn btn-primary btn-lg addButton" id="submitbtn">
                     <input type="submit" value="Create" class="btn btn-primary" />
                 </div>
-                <div class="buttonBlack addbutton" id="backLink">
-                    <a asp-page="./Index">Back to List</a>
+                <div addButton" id="backLink">
+                    <a class="btn btn-outline-info" asp-page="./Index">Back to List</a>
                 </div>
             </div>
         </div>
     </form>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {
